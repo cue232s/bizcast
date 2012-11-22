@@ -7,6 +7,8 @@
   %b User:
   = @card.user_id
 %p
+  = image_tag @card.photo.url(:medium)
+%p
   %b Message title:
   = @card.message_title
 %p

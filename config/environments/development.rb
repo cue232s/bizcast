@@ -34,4 +34,6 @@ Bizcast::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  # Tells Paperclip plugin where to find imageMagick 
+  Paperclip.options[:command_path] = "/usr/bin/"
 end
