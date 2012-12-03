@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :Gender
       t.string :State
       t.string :Zip
-      t.sting :Country
+      t.string :Country
       t.string :Birthday
 
       t.timestamps
