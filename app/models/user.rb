@@ -1,3 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :Birthday, :Country, :Email, :Fname, :Gender, :Lname, :State, :Username, :Zip
+  attr_accessible :birthday, :country, :email, :fname, :gender, :lname, :state, :username, :zip, :password, :password_confirmation
+
+  acts_as_authentic
+
 end

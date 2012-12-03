@@ -15,23 +15,15 @@
   .field
     = f.label :lname
     = f.text_field :lname
-  .field
+    .field
     = f.label :username
     = f.text_field :username
   .field
-    = f.label :gender
-    = f.text_field :gender
+    = f.label :password
+    = f.password_field :password
   .field
-    = f.label :state
-    = f.text_field :state
-  .field
-    = f.label :zip
-    = f.text_field :zip
-  .field
-    = f.label :country
-    = f.text_field :country
-  .field
-    = f.label :birthday
-    = f.text_field :birthday
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+ 
   .actions
     = f.submit 'Save'
