@@ -1,4 +1,7 @@
 Bizcast::Application.routes.draw do
+  get "user_sessions/new"
+
+  resource :user_session
   resources :users
 
 

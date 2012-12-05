@@ -1,0 +1,5 @@
+digital card (card)
+- should belong to a user
+- should belong to a business profile
+-
+
