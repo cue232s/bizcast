@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20121205044731) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.datetime "publish_date"
   end
 
   create_table "users", :force => true do |t|
