@@ -1,0 +1,35 @@
+%h1 Listing business_profiles
+
+%table
+  %tr
+    %th Business name
+    %th Address
+    %th Zipcode
+    %th State
+    %th Country code
+    %th Description
+    %th Email
+    %th Phone
+    %th User
+    %th
+    %th
+    %th
+
+  - @business_profiles.each do |business_profile|
+    %tr
+      %td= business_profile.business_name
+      %td= business_profile.address
+      %td= business_profile.zipcode
+      %td= business_profile.state
+      %td= business_profile.country_code
+      %td= business_profile.description
+      %td= business_profile.email
+      %td= business_profile.phone
+      %td= business_profile.user_id
+      %td= link_to 'Show', business_profile
+      %td= link_to 'Edit', edit_business_profile_path(business_profile)
+      %td= link_to 'Destroy', business_profile, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Business profile', new_business_profile_path

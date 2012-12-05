@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Business name:
+  = @business_profile.business_name
+%p
+  %b Address:
+  = @business_profile.address
+%p
+  %b Zipcode:
+  = @business_profile.zipcode
+%p
+  %b State:
+  = @business_profile.state
+%p
+  %b Country code:
+  = @business_profile.country_code
+%p
+  %b Description:
+  = @business_profile.description
+%p
+  %b Email:
+  = @business_profile.email
+%p
+  %b Phone:
+  = @business_profile.phone
+%p
+  %b User:
+  = @business_profile.user_id
+
+= link_to 'Edit', edit_business_profile_path(@business_profile)
+\|
+= link_to 'Back', business_profiles_path

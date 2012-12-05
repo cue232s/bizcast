@@ -1,5 +1,8 @@
 Bizcast::Application.routes.draw do
 
+  resources :business_profiles
+
+
   resource :user_session
   resources :users
 
