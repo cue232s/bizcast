@@ -2,6 +2,7 @@ Bizcast::Application.routes.draw do
 
   resources :business_profiles
 
+  get "sign_up" => "users#new"
 
   resource :user_session
   resources :users
