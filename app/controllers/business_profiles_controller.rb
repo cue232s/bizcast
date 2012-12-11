@@ -1,4 +1,5 @@
 class BusinessProfilesController < ApplicationController
+  before_filter :confirm_logged_in
   # GET /business_profiles
   # GET /business_profiles.json
   def index

@@ -3,6 +3,20 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_session, :current_user
 
+
+
+  protected 
+
+    def confirm_logged_in
+    unless current_user
+      flash[:notice] = "Please log in."
+      redirect_to new_user_session_path
+      return false # halts the before_filter
+    else
+      return true
+    end
+  end
+
   private
 
   def current_user_session
