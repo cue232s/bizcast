@@ -1,0 +1,16 @@
+%h1 Home Page
+%p Find me in app/views/deal_feed/public.html.haml
+
+- @deals.each do |deal|
+	%ul.thumbnails
+		%li.span3
+			.thumbnail
+				= link_to image_tag deal.photo.url, :style => 'width:100%'
+				.caption
+					%h3= deal.message_title
+					%h4= deal.business_name
+					%p=  deal.message_description
+
+
+
+

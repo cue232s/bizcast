@@ -1,5 +1,9 @@
 Bizcast::Application.routes.draw do
 
+  get "deal_feed/public"
+
+  get "deal_feed/private"
+
   resources :business_profiles
 
   get "sign_up" => "users#new"
@@ -60,7 +64,7 @@ Bizcast::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'cards#index'
+   root :to => 'deal_feed#public'
 
   # See how all your routes lay out with "rake routes"
 
