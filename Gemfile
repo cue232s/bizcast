@@ -28,6 +28,18 @@ end
 
 gem 'jquery-rails'
 
+group :test, :development do
+  gem 'turn', '< 0.8.3'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'ruby_gntp'
+  gem 'rb-inotify', :require => false
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
