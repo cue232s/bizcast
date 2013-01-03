@@ -1,4 +1,10 @@
 Bizcast::Application.configure do
+
+  TWITTER_KEY = "iNzfLkQUkiQsVUamhWVKA"
+  TWITTER_SECRET = "EJtcLMzKfvwXhSsVokkQPhpkAgE4aJffyuAIcxINE2c"
+
+  FACEBOOK_KEY = "262061043922985"
+  FACEBOOK_SECRET = "34c7fb16daa2c729f2f93e3473420354"
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

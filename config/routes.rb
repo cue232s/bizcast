@@ -4,13 +4,15 @@ Bizcast::Application.routes.draw do
 
   get "deal_feed/private"
 
+  get "user_from_omniauth" => "authentications#create"
+
   resources :business_profiles
 
   get "sign_up" => "users#new"
 
   resource :user_session
   resources :users
-
+  match 'auth/:provider/callback', to: 'authentications#create'
 
   resources :cards
 

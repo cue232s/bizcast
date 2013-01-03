@@ -1,5 +1,6 @@
 %h2 Login In
 
+%div.well Please sign in with you email and password, or sign in through Facebook or Twitter.
 
 = form_for @user_session, :url => user_session_path do |f|
   - if @user_session.errors.any?
@@ -8,15 +9,19 @@
       %ul
         - @user_session.errors.full_messages.each do |msg|
           %li= msg
+  .pull-left
+    .field
+      = f.label :email
+      = f.text_field :email
 
-  .field
-    = f.label :email
-    = f.text_field :email
+    .field
+      = f.label :password
+      = f.password_field :password
 
-  .field
-    = f.label :password
-    = f.password_field :password
-
-  .actions
-    = f.submit 'Log In'
-    
+    .actions
+      = f.submit 'Log In'
+  
+  %div
+    %p
+      = link_to(image_tag("facebook-icon.png"), root_path + "auth/facebook")
+      = link_to image_tag("twitter-icon.png"), root_path + "auth/twitter"

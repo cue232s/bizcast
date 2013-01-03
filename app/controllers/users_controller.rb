@@ -40,7 +40,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    #grab user from database if through twitter or faceboo
+    
+    @user = User.from_omniauth(env['omniauth.auth']) unless params[:user]
+ 
+    @user = @user || User.new(params[:user])
 
     respond_to do |format|
       if @user.save

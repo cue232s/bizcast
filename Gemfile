@@ -4,14 +4,15 @@ gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'hirb'
 gem 'pg'
 gem 'haml-rails'
 gem 'haml'
 gem "paperclip", "~> 3.0"
 gem "authlogic"	#authentication gem
 gem "twitter-bootstrap-rails"
-
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 # Gems used only for assets and not required
 # in production environments by default.

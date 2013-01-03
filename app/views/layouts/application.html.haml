@@ -41,7 +41,8 @@
             
 
     .container
-
+      = session
+      = current_user.fname unless !current_user
       .content
         .row
           .span9
