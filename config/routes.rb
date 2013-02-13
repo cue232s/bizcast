@@ -11,8 +11,12 @@ Bizcast::Application.routes.draw do
   get "sign_up" => "users#new"
 
   resource :user_session
-  resources :users
+  resources :users do 
+    resources :business_profiles
+  end
   match 'auth/:provider/callback', to: 'authentications#create'
+
+  post 'add_details' => "authentications#add_detail"
 
   resources :cards
 

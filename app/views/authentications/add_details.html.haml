@@ -1,6 +1,6 @@
 %hi Added your email and password
 
-= form_for @user, :url => user_from_omniauth_path, :html => {:method =>'get'} do |f|
+= form_for @user, :url => add_details_path do |f|
 
   - if @user.errors.any?
     #error_explanation

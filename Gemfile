@@ -13,6 +13,7 @@ gem "authlogic"	#authentication gem
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'debugger'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,6 +40,7 @@ group :test, :development do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'mocha'
 end
 
 # To use ActiveModel has_secure_password

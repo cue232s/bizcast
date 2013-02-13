@@ -1,6 +1,9 @@
 %p#notice= notice
 
 %p
+  = @user.business_profile ? link_to('Business Page', user_business_profile_path(@user.id, @user.business_profile.id)) : link_to('Create A Business Page',  user_business_profiles_path(@user.id), :method => 'post') 
+
+%p
   %b Email:
   = @user.email
 %p
