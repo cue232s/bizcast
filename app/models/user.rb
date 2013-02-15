@@ -1,20 +1,20 @@
-require 'debugger'; debugger
 class User < ActiveRecord::Base
-  attr_accessible :birthday, :country, :email, :fname, :gender, :lname, :state, :username, :zip, :password, :password_confirmation
-  has_one :business_profile
-  has_many :cards
-  has_many :authentications
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :omniauthable,
+         :recoverable, :rememberable, :trackable, :validatable
 
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :username
+  # attr_accessible :title, :body
 
-  acts_as_authentic do |c|
-    c.login_field = :email
+  validates_presence_of :username
+  validates_uniqueness_of :username
+
+  has_many :authentications, :dependent => :destroy
+
+  def apply_omniauth(omniauth)
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
   end
-
-	def apply_omniauth(omniauth)
-    debugger
-	  self.email = omniauth['info']['email'] if omniauth['provider'] == 'facebook'
-    self.username = omniauth['info']['nickname'] if omniauth['provider'] == 'twitter'
-	  authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
-	end
-
 end

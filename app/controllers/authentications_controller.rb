@@ -2,18 +2,20 @@ class AuthenticationsController < ApplicationController
 
 	def index
 		@authentications = current_user.authentications if current_user
-	end	
+	end
 
 	def create
+
 	  omniauth = request.env["omniauth.auth"] #|| session[:omniauth]
+
 	  # check to see if authentication already exist
 	  authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
-	  if authentication 
+	  if authentication
 	  	#if user has an authentication via omniauth
 	    flash[:notice] = "Signed in successfully."
     	UserSession.create(authentication.user)
       redirect_to root_url
-	  elsif current_user 
+	  elsif current_user
 	  	#if user is already logged in and wanting to create authentication through omniauth
 	    current_user.authentications.create(:provider => omniauth['provider'], :uid => omniauth['uid'])
 	    current_user.save
@@ -30,7 +32,7 @@ class AuthenticationsController < ApplicationController
 	    else #if user does not have email address or username ask for it.
 	    	#return render :text => "#{@user.as_json}   #{@user.authentications.as_json}"
 	    	@user
-	      #session[:omniauth] = omniauth.except('extra')
+	      session[:bb] = "aasdasd"
 	      render :add_details
 	    end
   	end
@@ -39,13 +41,13 @@ class AuthenticationsController < ApplicationController
   def add_detail
   	auth = request.session
   	user = User.new(params[:user])
-  	user.apply_omniauth(request.session['ouath'])
+  	user.apply_omniauth(session[:omniauth])
   	if user.save
   		render :text => user.id
   	end
 
   	#render :text => request.session #user.valid? #request.session.inspect #params[:user]
-  end	
+  end
 
 
 
@@ -55,40 +57,6 @@ class AuthenticationsController < ApplicationController
 	  @authentication.destroy
 	  flash[:notice] = "Successfully destroyed authentication."
 	  redirect_to authentications_exit
-
-exit
-exit
-?
-t
-
-z
-x
-xi
-exit
-stop
-:qw
-:q
-:w
-eixt
-end
-;
-EndEdit
-EditEnd
-End
-exit
-end
-stop
-exit
-quit
-sotp
-c
-c
-xt
-t
-exit
-t
-t
-t
-t
-t
+	end
 
+end

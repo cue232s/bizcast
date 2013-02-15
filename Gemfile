@@ -9,7 +9,7 @@ gem 'pg'
 gem 'haml-rails'
 gem 'haml'
 gem "paperclip", "~> 3.0"
-gem "authlogic"	#authentication gem
+gem "devise"
 gem "twitter-bootstrap-rails"
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

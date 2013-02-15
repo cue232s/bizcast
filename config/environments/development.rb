@@ -22,6 +22,8 @@ Bizcast::Application.configure do
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -40,6 +42,6 @@ Bizcast::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  # Tells Paperclip plugin where to find imageMagick 
+  # Tells Paperclip plugin where to find imageMagick
   Paperclip.options[:command_path] = "/usr/bin/"
 end

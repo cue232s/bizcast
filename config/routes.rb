@@ -1,5 +1,7 @@
 Bizcast::Application.routes.draw do
 
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}, controllers: {omniauth_callbacks: "omniauth_callbacks", :registrations => 'registrations'}
+
   get "deal_feed/public"
 
   get "deal_feed/private"
@@ -8,12 +10,6 @@ Bizcast::Application.routes.draw do
 
   resources :business_profiles
 
-  get "sign_up" => "users#new"
-
-  resource :user_session
-  resources :users do 
-    resources :business_profiles
-  end
   match 'auth/:provider/callback', to: 'authentications#create'
 
   post 'add_details' => "authentications#add_detail"
